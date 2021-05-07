@@ -14,7 +14,7 @@ public class GeneralFrame extends JFrame {
     static JPanel jPanel = new JPanel();
 
     public GeneralFrame() {
-        setBounds(desktopWidth / 4, desktopHeight / 4, desktopWidth , desktopHeight );
+        setBounds(desktopWidth / 4, desktopHeight / 4, desktopWidth, desktopHeight);
         setTitle("Help With Magic");
         add(new TitleText("Российская Ассоциация Иллюзионистов", 20));
         add(jPanel);
@@ -48,7 +48,8 @@ public class GeneralFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
-    private static class MagicAction extends AbstractAction{
+
+    private static class MagicAction extends AbstractAction {
 
         @Override
         public void actionPerformed(ActionEvent e) {
