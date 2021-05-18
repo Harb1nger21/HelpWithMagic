@@ -1,8 +1,10 @@
 package Project;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class Magician {
     private String firstName;
     private String secondName;
