@@ -6,8 +6,6 @@ import Project.Frame.Components.TableOfMagicians;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class GeneralFrame extends JFrame {
     Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -45,17 +43,16 @@ public class GeneralFrame extends JFrame {
         add(magicCategory);
 
         NominationButton one_trick = new NominationButton("Шоу Момент", tableOfMagicians, magicCategory);
-        tableOfMagicians.setListOfMagicians(one_trick.getMagicians());
-        NominationButton stage = new NominationButton("Сценическая Магия", tableOfMagicians, magicCategory);
         NominationButton micromagic = new NominationButton("Микромагия", tableOfMagicians, magicCategory);
         NominationButton kidsStage = new NominationButton("Детская Магия", tableOfMagicians, magicCategory);
         NominationButton kidsMicromagic = new NominationButton("Детская Микромагия", tableOfMagicians, magicCategory);
+        NominationButton stage = new NominationButton("Сценическая Магия", tableOfMagicians, magicCategory);
 
-        one_trick.setBounds(startX, startY, buttonWidth, buttonHeight);
-        stage.setBounds(startX + step, startY, buttonWidth, buttonHeight);
-        micromagic.setBounds(startX + step * 2, startY, buttonWidth, buttonHeight);
-        kidsStage.setBounds(startX + step * 3, startY, buttonWidth, buttonHeight);
-        kidsMicromagic.setBounds(startX + step * 4, startY, buttonWidth, buttonHeight);
+        stage.setBounds(startX, startY, buttonWidth, buttonHeight);
+        micromagic.setBounds(startX + step, startY, buttonWidth, buttonHeight);
+        kidsStage.setBounds(startX + step * 2, startY, buttonWidth, buttonHeight);
+        kidsMicromagic.setBounds(startX + step * 3, startY, buttonWidth, buttonHeight);
+        one_trick.setBounds(startX + step * 4, startY, buttonWidth, buttonHeight);
 
         add(one_trick);
         add(stage);

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 @Getter
 public class TableOfMagicians extends AbstractTableModel {
-    private ArrayList<Magician> listOfMagicians;
+    private ArrayList<Magician> listOfMagicians = new ArrayList<>();
     private int nomination = 0;
 
     public TableOfMagicians() {
