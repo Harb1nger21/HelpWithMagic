@@ -40,7 +40,7 @@ public class TestFrame extends JFrame {
     }
 
     protected static ImageIcon createIcon(String path) {
-        URL imgURL = TestFrame.class.getResource(path);
+        URL imgURL = TestFrame_2.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
@@ -51,11 +51,9 @@ public class TestFrame extends JFrame {
 
 
     public static void main(String[] args) {
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                JFrame.setDefaultLookAndFeelDecorated(true);
-                createGUI();
-            }
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            JFrame.setDefaultLookAndFeelDecorated(true);
+            createGUI();
         });
     }
 }

@@ -3,8 +3,6 @@ package Project.Frame.Components;
 import Project.Magician;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AddButton extends JButton {
     private final JTextField firstName;

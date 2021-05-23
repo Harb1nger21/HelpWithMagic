@@ -1,15 +1,13 @@
 package Project.Frame.Components;
 
 import Project.Magician;
-import lombok.Getter;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
-@Getter
+
 public class TableOfMagicians extends AbstractTableModel {
-    private ArrayList<Magician> listOfMagicians = new ArrayList<>();
-    private int nomination = 0;
+    private ArrayList<Magician> listOfMagicians;
 
     public TableOfMagicians() {
         super();
@@ -51,11 +49,11 @@ public class TableOfMagicians extends AbstractTableModel {
         };
     }
 
-    public void setNomination(int nomination) {
-        this.nomination = nomination;
-    }
-
     public void setListOfMagicians(ArrayList<Magician> listOfMagicians) {
         this.listOfMagicians = listOfMagicians;
+    }
+
+    public ArrayList<Magician> getListOfMagicians() {
+        return listOfMagicians;
     }
 }

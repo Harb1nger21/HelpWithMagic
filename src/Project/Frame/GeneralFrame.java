@@ -1,8 +1,6 @@
 package Project.Frame;
 
-import Project.Frame.Components.AddButton;
-import Project.Frame.Components.NominationButton;
-import Project.Frame.Components.TableOfMagicians;
+import Project.Frame.Components.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -96,32 +94,25 @@ public class GeneralFrame extends JFrame {
         add(city);
         add(phoneNumber);
 
+        MagicMouseListener mouseListener = new MagicMouseListener(jTable);
+        jTable.addMouseListener(mouseListener);
+
         AddButton addMagician = new AddButton("Добавить", firstName, secondName, country, city, phoneNumber, tableOfMagicians);
         addMagician.setBounds(startX + step * 5, startY * 3, buttonWidth, buttonHeight);
         add(addMagician);
 
-        JButton changeMagician = new JButton("Изменить");
-        changeMagician.addActionListener(e -> {
-            tableOfMagicians.getListOfMagicians().remove(0);
-            tableOfMagicians.fireTableDataChanged();
-        });
-
-        add(changeMagician);
+        ChangeButton changeMagician = new ChangeButton("Изменить");
         changeMagician.setBounds(startX + step * 5, startY * 3 + 30, buttonWidth, buttonHeight);
+        add(changeMagician);
 
-        JButton deleteMagician = new JButton("Удалить");
-        deleteMagician.addActionListener(e -> {
-            tableOfMagicians.getListOfMagicians().remove(0);
-            tableOfMagicians.fireTableDataChanged();
-
-        });
-
+        DeleteButton deleteMagician = new DeleteButton("Удалить",tableOfMagicians, mouseListener);
         add(deleteMagician);
-        deleteMagician.setBounds(startX + step * 5, startY * 3 + 60, buttonWidth, buttonHeight);
+        deleteMagician.setBounds(startX + step * 5, startY * 4 + 10, buttonWidth, buttonHeight);
 
         revalidate();
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+
 }

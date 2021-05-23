@@ -3,8 +3,6 @@ package Project.Frame.Components;
 import Project.Magician;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class NominationButton extends JButton {
@@ -15,6 +13,7 @@ public class NominationButton extends JButton {
     public NominationButton(String text, TableOfMagicians table, JLabel label) {
         super(text);
         this.table = table;
+        table.setListOfMagicians(magicians);
         this.label = label;
         this.label.setText(text);
         addActionListener();
