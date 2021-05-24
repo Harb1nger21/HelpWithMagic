@@ -5,6 +5,10 @@ import Project.Magician;
 import javax.swing.*;
 import java.util.ArrayList;
 
+//Кнопка номинации конкурса
+//Отображает список участников в номинации
+//Отображает название активной таблицы
+
 public class NominationButton extends JButton {
     private ArrayList<Magician> magicians = new ArrayList<>();
     private TableOfMagicians table;
@@ -17,11 +21,6 @@ public class NominationButton extends JButton {
         this.label = label;
         this.label.setText(text);
         addActionListener();
-
-    }
-
-    public ArrayList<Magician> getMagicians() {
-        return magicians;
     }
 
     private void addActionListener() {

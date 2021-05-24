@@ -3,16 +3,23 @@ package Project.Frame;
 import Project.Frame.Components.*;
 
 import javax.swing.*;
-import javax.swing.table.TableModel;
 import java.awt.*;
 
+//Главный фрейм
+
 public class GeneralFrame extends JFrame {
-    Toolkit toolkit = Toolkit.getDefaultToolkit();
-    Dimension dimension = toolkit.getScreenSize();
-    int desktopWidth = dimension.width;
-    int desktopHeight = dimension.height;
 
     public GeneralFrame() {
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension dimension = toolkit.getScreenSize();
+        int desktopWidth = dimension.width;
+        int desktopHeight = dimension.height;
+        int step = 170;
+        int buttonWidth = 160;
+        int buttonHeight = 20;
+        int startX = (desktopWidth - (step * 4 + buttonWidth)) / 2;
+        int startY = 50;
+
         setBounds(0, 0, desktopWidth, desktopHeight);
         setTitle("Help With Magic");
 
@@ -20,14 +27,6 @@ public class GeneralFrame extends JFrame {
         rau.setFont(new Font("Times New Roman", Font.BOLD, 30));
         rau.setBounds((desktopWidth - 650) / 2, 20, 700, 20);
         add(rau);
-
-
-        int step = 170;
-        int buttonWidth = 160;
-        int buttonHeight = 20;
-        int startX = (desktopWidth - (step * 4 + buttonWidth)) / 2;
-        int startY = 50;
-
 
         TableOfMagicians tableOfMagicians = new TableOfMagicians();
         JTable jTable = new JTable(tableOfMagicians);
@@ -103,8 +102,12 @@ public class GeneralFrame extends JFrame {
         add(addMagician);
 
         DeleteButton deleteMagician = new DeleteButton("Удалить", tableOfMagicians, mouseListener);
-        add(deleteMagician);
         deleteMagician.setBounds(startX + step * 5, startY * 3 + 30, buttonWidth, buttonHeight);
+        add(deleteMagician);
+
+        SortButton sortMagician = new SortButton("Сортировать", tableOfMagicians);
+        sortMagician.setBounds(startX + step * 5, startY * 3 + 60, buttonWidth, buttonHeight);
+        add(sortMagician);
 
         revalidate();
         setLayout(null);

@@ -4,6 +4,8 @@ import Project.Magician;
 
 import javax.swing.*;
 
+//Кнопка добавления участника конкурса в таблицу
+
 public class AddButton extends JButton {
     private final JTextField firstName;
     private final JTextField secondName;

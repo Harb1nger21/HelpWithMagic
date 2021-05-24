@@ -5,12 +5,21 @@ import Project.Magician;
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
+//Модель таблицы участников
 
 public class TableOfMagicians extends AbstractTableModel {
     private ArrayList<Magician> listOfMagicians;
 
     public TableOfMagicians() {
         super();
+    }
+
+    public void setListOfMagicians(ArrayList<Magician> listOfMagicians) {
+        this.listOfMagicians = listOfMagicians;
+    }
+
+    public ArrayList<Magician> getListOfMagicians() {
+        return listOfMagicians;
     }
 
     @Override
@@ -23,6 +32,7 @@ public class TableOfMagicians extends AbstractTableModel {
         return 6;
     }
 
+    @Override
     public boolean isCellEditable(int row, int col) {
         return true;
     }
@@ -30,24 +40,12 @@ public class TableOfMagicians extends AbstractTableModel {
     @Override
     public void setValueAt(Object value, int rowIndex, int columnIndex) {
         switch (columnIndex) {
-            case 0:
-                listOfMagicians.get(rowIndex).setFirstName((String) value);
-                break;
-            case 1:
-                listOfMagicians.get(rowIndex).setSecondName((String) value);
-                break;
-            case 2:
-                listOfMagicians.get(rowIndex).setCountry((String) value);
-                break;
-            case 3:
-                listOfMagicians.get(rowIndex).setCity((String) value);
-                break;
-            case 4:
-                listOfMagicians.get(rowIndex).setPhoneNumber((String) value);
-                break;
-            case 5:
-                listOfMagicians.get(rowIndex).setLotNumber((String) value);
-                break;
+            case 0 -> listOfMagicians.get(rowIndex).setFirstName((String) value);
+            case 1 -> listOfMagicians.get(rowIndex).setSecondName((String) value);
+            case 2 -> listOfMagicians.get(rowIndex).setCountry((String) value);
+            case 3 -> listOfMagicians.get(rowIndex).setCity((String) value);
+            case 4 -> listOfMagicians.get(rowIndex).setPhoneNumber((String) value);
+            case 5 -> listOfMagicians.get(rowIndex).setLotNumber((String) value);
         }
     }
 
@@ -75,13 +73,5 @@ public class TableOfMagicians extends AbstractTableModel {
             case 5 -> "Жеребьевка";
             default -> "";
         };
-    }
-
-    public void setListOfMagicians(ArrayList<Magician> listOfMagicians) {
-        this.listOfMagicians = listOfMagicians;
-    }
-
-    public ArrayList<Magician> getListOfMagicians() {
-        return listOfMagicians;
     }
 }

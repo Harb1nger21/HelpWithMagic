@@ -2,6 +2,8 @@ package Project.Frame.Components;
 
 import javax.swing.*;
 
+//Удаляет выбранного мышью участника из таблицы
+
 public class DeleteButton extends JButton {
     TableOfMagicians table;
     MagicMouseListener listener;

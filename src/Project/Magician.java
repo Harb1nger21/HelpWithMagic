@@ -1,11 +1,15 @@
 package Project;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+//Класс для хранения информации об участнике
+
 @Getter
 @Setter
-public class Magician {
+@EqualsAndHashCode
+public class Magician implements Comparable<Magician>{
     private String firstName;
     private String secondName;
     private String country;
@@ -19,5 +23,10 @@ public class Magician {
         this.country = country;
         this.city = city;
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public int compareTo(Magician magician) {
+        return lotNumber.compareTo(magician.lotNumber);
     }
 }
