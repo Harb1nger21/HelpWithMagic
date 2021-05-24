@@ -23,6 +23,34 @@ public class TableOfMagicians extends AbstractTableModel {
         return 6;
     }
 
+    public boolean isCellEditable(int row, int col) {
+        return true;
+    }
+
+    @Override
+    public void setValueAt(Object value, int rowIndex, int columnIndex) {
+        switch (columnIndex) {
+            case 0:
+                listOfMagicians.get(rowIndex).setFirstName((String) value);
+                break;
+            case 1:
+                listOfMagicians.get(rowIndex).setSecondName((String) value);
+                break;
+            case 2:
+                listOfMagicians.get(rowIndex).setCountry((String) value);
+                break;
+            case 3:
+                listOfMagicians.get(rowIndex).setCity((String) value);
+                break;
+            case 4:
+                listOfMagicians.get(rowIndex).setPhoneNumber((String) value);
+                break;
+            case 5:
+                listOfMagicians.get(rowIndex).setLotNumber((String) value);
+                break;
+        }
+    }
+
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         return switch (columnIndex) {

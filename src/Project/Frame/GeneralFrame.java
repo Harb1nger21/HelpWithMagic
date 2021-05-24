@@ -3,6 +3,7 @@ package Project.Frame;
 import Project.Frame.Components.*;
 
 import javax.swing.*;
+import javax.swing.table.TableModel;
 import java.awt.*;
 
 public class GeneralFrame extends JFrame {
@@ -101,13 +102,9 @@ public class GeneralFrame extends JFrame {
         addMagician.setBounds(startX + step * 5, startY * 3, buttonWidth, buttonHeight);
         add(addMagician);
 
-        ChangeButton changeMagician = new ChangeButton("Изменить");
-        changeMagician.setBounds(startX + step * 5, startY * 3 + 30, buttonWidth, buttonHeight);
-        add(changeMagician);
-
-        DeleteButton deleteMagician = new DeleteButton("Удалить",tableOfMagicians, mouseListener);
+        DeleteButton deleteMagician = new DeleteButton("Удалить", tableOfMagicians, mouseListener);
         add(deleteMagician);
-        deleteMagician.setBounds(startX + step * 5, startY * 4 + 10, buttonWidth, buttonHeight);
+        deleteMagician.setBounds(startX + step * 5, startY * 3 + 30, buttonWidth, buttonHeight);
 
         revalidate();
         setLayout(null);

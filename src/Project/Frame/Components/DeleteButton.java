@@ -6,7 +6,7 @@ public class DeleteButton extends JButton {
     TableOfMagicians table;
     MagicMouseListener listener;
 
-    public DeleteButton(String text,TableOfMagicians table, MagicMouseListener listener) {
+    public DeleteButton(String text, TableOfMagicians table, MagicMouseListener listener) {
         super(text);
         this.table = table;
         this.listener = listener;
