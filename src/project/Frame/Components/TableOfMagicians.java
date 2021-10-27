@@ -1,6 +1,6 @@
-package Project.Frame.Components;
+package project.Frame.Components;
 
-import Project.Magician;
+import project.model.Magician;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;

@@ -1,9 +1,12 @@
-package Project.Frame;
+package project.Frame;
 
-import Project.Frame.Components.*;
+import project.Frame.Components.*;
+import project.model.Nomination;
 
 import javax.swing.*;
 import java.awt.*;
+
+import static project.model.Nomination.*;
 
 //Главный фрейм
 
@@ -40,11 +43,15 @@ public class GeneralFrame extends JFrame {
         magicCategory.setFont(new Font("Times New Roman", Font.BOLD, 20));
         add(magicCategory);
 
-        NominationButton one_trick = new NominationButton("Шоу Момент", tableOfMagicians, magicCategory);
-        NominationButton micromagic = new NominationButton("Микромагия", tableOfMagicians, magicCategory);
-        NominationButton kidsStage = new NominationButton("Детская Магия", tableOfMagicians, magicCategory);
-        NominationButton kidsMicromagic = new NominationButton("Детская Микромагия", tableOfMagicians, magicCategory);
-        NominationButton stage = new NominationButton("Сценическая Магия", tableOfMagicians, magicCategory);
+        SaveButton saveButton = new SaveButton("Сохранить", tableOfMagicians);
+        saveButton.setBounds(startX + step * 5, startY * 3 + 90, buttonWidth, buttonHeight);
+        add(saveButton);
+
+        NominationButton one_trick = new NominationButton(ONE_TRICK, tableOfMagicians, magicCategory, saveButton);
+        NominationButton micromagic = new NominationButton(MICROMAGIC, tableOfMagicians, magicCategory, saveButton);
+        NominationButton kidsStage = new NominationButton(KIDS_STAGE, tableOfMagicians, magicCategory, saveButton);
+        NominationButton kidsMicromagic = new NominationButton(KIDS_MICROMAGIC, tableOfMagicians, magicCategory, saveButton);
+        NominationButton stage = new NominationButton(STAGE, tableOfMagicians, magicCategory, saveButton);
 
         stage.setBounds(startX, startY, buttonWidth, buttonHeight);
         micromagic.setBounds(startX + step, startY, buttonWidth, buttonHeight);

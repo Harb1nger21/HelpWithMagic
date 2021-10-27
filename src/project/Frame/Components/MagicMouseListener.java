@@ -1,4 +1,4 @@
-package Project.Frame.Components;
+package project.Frame.Components;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 //Для считывания положения мыши в таблице
 
 public class MagicMouseListener extends MouseAdapter {
-    private JTable table;
+    private final JTable table;
     private int row;
 
     public MagicMouseListener(JTable table) {

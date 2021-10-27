@@ -1,6 +1,7 @@
-package Project.Frame.Components;
+package project.Frame.Components;
 
-import Project.Magician;
+import project.model.Magician;
+import project.model.Nomination;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -10,16 +11,20 @@ import java.util.ArrayList;
 //Отображает название активной таблицы
 
 public class NominationButton extends JButton {
-    private ArrayList<Magician> magicians = new ArrayList<>();
-    private TableOfMagicians table;
-    private JLabel label;
+    private final ArrayList<Magician> magicians = new ArrayList<>();
+    private final TableOfMagicians table;
+    private final JLabel label;
+    private final Nomination nomination;
+    private SaveButton saveButton;
 
-    public NominationButton(String text, TableOfMagicians table, JLabel label) {
-        super(text);
+    public NominationButton(Nomination nomination, TableOfMagicians table, JLabel label, SaveButton saveButton) {
+        super(nomination.getTitle());
+        this.nomination = nomination;
         this.table = table;
         table.setListOfMagicians(magicians);
         this.label = label;
-        this.label.setText(text);
+        this.label.setText(nomination.getTitle());
+        this.saveButton = saveButton;
         addActionListener();
     }
 
@@ -27,6 +32,7 @@ public class NominationButton extends JButton {
         super.addActionListener(e -> {
             label.setText(NominationButton.super.getText());
             table.setListOfMagicians(magicians);
+            saveButton.setNomination(nomination);
             table.fireTableDataChanged();
         });
     }
