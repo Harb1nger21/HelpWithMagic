@@ -1,4 +1,4 @@
-package project.model;
+package Project.Frame.Components;
 
 public enum Nomination {
     ONE_TRICK("Шоу Момент"),

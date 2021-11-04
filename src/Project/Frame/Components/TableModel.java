@@ -1,16 +1,16 @@
-package project.Frame.Components;
+package Project.Frame.Components;
 
-import project.model.Magician;
+import Project.model.Magician;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
 //Модель таблицы участников
 
-public class TableOfMagicians extends AbstractTableModel {
+public class TableModel extends AbstractTableModel {
     private ArrayList<Magician> listOfMagicians;
 
-    public TableOfMagicians() {
+    public TableModel() {
         super();
     }
 

@@ -1,6 +1,6 @@
-package project;
+package Project;
 
-import project.Frame.GeneralFrame;
+import Project.Frame.GeneralFrame;
 
 public class Main {
     public static void main(String[] args) {

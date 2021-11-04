@@ -1,24 +1,26 @@
-package project.Frame.Components;
+package Project.Frame.Components.Buttons;
 
-import project.model.Magician;
-import project.model.Nomination;
+import Project.Frame.Components.TableModel;
+import Project.model.Magician;
+import Project.Frame.Components.Nomination;
 
 import javax.swing.*;
 import java.io.*;
+import java.time.LocalDate;
 import java.util.List;
 
 public class SaveButton extends JButton {
-    private final TableOfMagicians table;
-    private Nomination nomination = Nomination.STAGE;
+    private final TableModel table;
+    private static Nomination nomination = Nomination.STAGE;
 
-    public SaveButton(String text, TableOfMagicians table) {
+    public SaveButton(String text, TableModel table) {
         super(text);
         this.table = table;
         addActionListener();
     }
 
-    public void setNomination(Nomination nomination) {
-        this.nomination = nomination;
+    public static void setNomination(Nomination nomination) {
+        SaveButton.nomination = nomination;
     }
 
     private void addActionListener() {
@@ -48,7 +50,7 @@ public class SaveButton extends JButton {
     }
 
     private File createFile(int number, Magician magician) {
-        String dir = ".\\magicians\\" + nomination.name();
+        String dir = ".\\magicians\\" + LocalDate.now().getYear() + "\\" + nomination.name();
         new File(dir).mkdirs();
         return new File(dir,
                 number + ". " + magician.getFirstName() + " " + magician.getSecondName());

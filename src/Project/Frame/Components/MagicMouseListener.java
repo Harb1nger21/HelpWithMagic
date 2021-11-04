@@ -1,4 +1,4 @@
-package project.Frame.Components;
+package Project.Frame.Components;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
