@@ -21,7 +21,7 @@ public class Magician implements Comparable<Magician>, Serializable {
     private String country;
     private String city;
     private String phoneNumber;
-    private String lotNumber;
+    private Integer lotNumber;
 
     public Magician(String firstName, String secondName, String country, String city, String phoneNumber) {
         this.firstName = firstName;
@@ -33,6 +33,6 @@ public class Magician implements Comparable<Magician>, Serializable {
 
     @Override
     public int compareTo(Magician magician) {
-        return Integer.valueOf(lotNumber).compareTo(Integer.valueOf(magician.lotNumber));
+        return Integer.compare(lotNumber, magician.lotNumber);
     }
 }

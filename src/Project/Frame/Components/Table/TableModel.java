@@ -53,7 +53,7 @@ public class TableModel extends AbstractTableModel {
             case 2 -> magician.setCountry((String) value);
             case 3 -> magician.setCity((String) value);
             case 4 -> magician.setPhoneNumber((String) value);
-            case 5 -> magician.setLotNumber((String) value);
+            case 5 -> magician.setLotNumber(Integer.parseInt((String) value));
         }
     }
 

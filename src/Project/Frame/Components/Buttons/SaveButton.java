@@ -1,6 +1,5 @@
 package Project.Frame.Components.Buttons;
 
-import Project.Frame.Components.Table.TableModel;
 import Project.model.Magician;
 
 import java.io.*;
@@ -8,7 +7,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class SaveButton extends AbstractChangeButton {
-    private final TableModel table = TableModel.getInstance();
     private static Nomination nomination = Nomination.STAGE;
 
     public SaveButton() {
