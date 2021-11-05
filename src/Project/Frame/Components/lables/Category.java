@@ -7,6 +7,8 @@ import java.awt.*;
 import static Project.utils.Sizes.*;
 
 public class Category extends JLabel {
+    private static final Category category = new Category();
+
     private Category() {
         super();
         setBounds(START_X + STEP * 2, START_Y * 2 + START_Y / 2, 500, 20);
@@ -14,6 +16,6 @@ public class Category extends JLabel {
     }
 
     public static Category getInstance() {
-        return new Category();
+        return category;
     }
 }

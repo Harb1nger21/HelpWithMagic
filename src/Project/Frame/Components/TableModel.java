@@ -11,8 +11,9 @@ import static Project.Frame.Components.lables.LabelsType.*;
 
 public class TableModel extends AbstractTableModel {
     private ArrayList<Magician> listOfMagicians;
+    private static final TableModel model = new TableModel();
 
-    public TableModel() {
+    private TableModel() {
         super();
     }
 
@@ -22,6 +23,10 @@ public class TableModel extends AbstractTableModel {
 
     public ArrayList<Magician> getListOfMagicians() {
         return listOfMagicians;
+    }
+
+    public static TableModel getInstance(){
+        return model;
     }
 
     @Override

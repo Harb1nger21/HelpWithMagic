@@ -6,11 +6,10 @@ import Project.model.Magician;
 //Кнопка сортировки после жеребьевки
 
 public class SortButton extends AbstractChangeButton {
-    TableModel table;
+    private final TableModel table = TableModel.getInstance();
 
-    public SortButton(TableModel table) {
+    public SortButton() {
         super("Сортировать");
-        this.table = table;
         addActionListener();
     }
 

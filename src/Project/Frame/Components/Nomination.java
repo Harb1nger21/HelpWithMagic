@@ -2,10 +2,10 @@ package Project.Frame.Components;
 
 public enum Nomination {
     ONE_TRICK("Шоу Момент"),
-    STAGE("Сценическая Магия"),
+    KIDS_MICROMAGIC("Детская Микромагия"),
     MICROMAGIC("Микромагия"),
     KIDS_STAGE("Детская Магия"),
-    KIDS_MICROMAGIC("Детская Микромагия");
+    STAGE("Сценическая Магия");
 
     private final String title;
 

@@ -6,13 +6,11 @@ import Project.Frame.Components.TableModel;
 //Удаляет выбранного мышью участника из таблицы
 
 public class DeleteButton extends AbstractChangeButton {
-    private final TableModel table;
-    private final MagicMouseListener listener;
+    private final TableModel table = TableModel.getInstance();
+    private final MagicMouseListener listener = MagicMouseListener.getInstance();
 
-    public DeleteButton(TableModel table, MagicMouseListener listener) {
+    public DeleteButton() {
         super("Удалить");
-        this.table = table;
-        this.listener = listener;
         addActionListener();
     }
 

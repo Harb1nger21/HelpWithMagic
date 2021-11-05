@@ -2,7 +2,7 @@ package Project.Frame.Components.Buttons;
 
 import Project.Frame.Components.Nomination;
 import Project.Frame.Components.TableModel;
-import Project.Frame.GeneralFrame;
+import Project.Frame.Components.lables.Category;
 import Project.model.Magician;
 
 import javax.swing.*;
@@ -39,9 +39,9 @@ public class NominationButton extends AbstractButton {
     }
 
     private void setVariables() {
-        table = GeneralFrame.getTableOfMagicians();
+        table = TableModel.getInstance();
         table.setListOfMagicians(magicians);
-        label = GeneralFrame.getMagicCategory();
+        label = Category.getInstance();
         label.setText(nomination.getTitle());
     }
 

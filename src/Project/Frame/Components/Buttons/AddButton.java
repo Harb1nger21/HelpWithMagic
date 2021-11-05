@@ -2,6 +2,7 @@ package Project.Frame.Components.Buttons;
 
 import Project.Frame.Components.TableModel;
 import Project.Frame.Components.TextField.TextField;
+import Project.Frame.GeneralFrame;
 import Project.model.Magician;
 
 import javax.swing.*;
@@ -12,14 +13,16 @@ import java.util.List;
 
 public class AddButton extends AbstractChangeButton {
     private final List<JTextField> fields = new ArrayList<>();
-    private final TableModel table;
+    private final TableModel table = TableModel.getInstance();
 
-    public AddButton(TableModel table) {
+    public AddButton(GeneralFrame table) {
         super("Добавить");
-        this.table = table;
         for (int i = 0; i < 5; i++) {
-            fields.add(new TextField());
+            final TextField field = new TextField();
+            fields.add(field);
+            table.add(field);
         }
+
         addActionListener();
     }
 

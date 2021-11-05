@@ -33,6 +33,6 @@ public class Magician implements Comparable<Magician>, Serializable {
 
     @Override
     public int compareTo(Magician magician) {
-        return lotNumber.compareTo(magician.lotNumber);
+        return Integer.valueOf(lotNumber).compareTo(Integer.valueOf(magician.lotNumber));
     }
 }
