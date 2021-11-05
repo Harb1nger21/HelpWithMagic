@@ -3,7 +3,9 @@ package Project.Frame;
 import Project.Frame.Components.*;
 import Project.Frame.Components.Buttons.*;
 import Project.Frame.Components.lables.Category;
-import Project.Frame.Components.lables.Headment;
+import Project.Frame.Components.lables.Headmen;
+import Project.Frame.Components.lables.LabelsType;
+import Project.Frame.Components.lables.MagLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +23,7 @@ public class GeneralFrame extends JFrame {
         setBounds(0, 0, DESKTOP_WIDTH, DESKTOP_HEIGHT);
         setTitle("Help With Magic");
 
-        add(Headment.getInstance());
+        add(Headmen.getInstance());
 
         tableModel = new TableModel();
         JTable jTable = new JTable(tableModel);
@@ -36,16 +38,11 @@ public class GeneralFrame extends JFrame {
 
         MagicMouseListener mouseListener = new MagicMouseListener(jTable);
         jTable.addMouseListener(mouseListener);
+
         addAddComponents(new AddButton(tableModel));
         add(new DeleteButton(tableModel, mouseListener));
-
-        SortButton sortMagician = new SortButton("Сортировать", tableModel);
-        sortMagician.setBounds(START_X + STEP * 5, START_Y * 3 + 60, BUTTON_WIDTH, BUTTON_HEIGHT);
-        add(sortMagician);
-
-        SaveButton saveButton = new SaveButton("Сохранить", tableModel);
-        saveButton.setBounds(START_X + STEP * 5, START_Y * 3 + 90, BUTTON_WIDTH, BUTTON_HEIGHT);
-        add(saveButton);
+        add(new SortButton(tableModel));
+        add(new SaveButton(tableModel));
 
         revalidate();
         setLayout(null);
@@ -62,17 +59,16 @@ public class GeneralFrame extends JFrame {
     }
 
     private void addButtons() {
-        for(Nomination nomination: Nomination.values()){
+        for (Nomination nomination : Nomination.values()) {
             add(new NominationButton(nomination));
         }
     }
 
     private void addColumnLabels() {
-        add(new Label("Имя"));
-        add(new Label("Фамилия"));
-        add(new Label("Страна"));
-        add(new Label("Город"));
-        add(new Label("Номер телефона"));
+        final LabelsType[] labelsTypes = LabelsType.values();
+        for (int i = 0; i < labelsTypes.length - 1; i++) {
+            add(new MagLabel(labelsTypes[i].getTitle()));
+        }
     }
 
     private void addAddComponents(AddButton button) {

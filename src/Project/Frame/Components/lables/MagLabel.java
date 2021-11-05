@@ -1,12 +1,11 @@
 package Project.Frame.Components.lables;
 
 import static Project.utils.Sizes.*;
-import static Project.utils.Sizes.START_Y;
 
-public class Label extends AbstractLabel{
+public class MagLabel extends AbstractLabel {
     private static int number;
 
-    public Label(String name) {
+    public MagLabel(String name) {
         super(name);
     }
 

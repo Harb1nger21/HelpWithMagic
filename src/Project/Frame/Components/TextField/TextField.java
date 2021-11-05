@@ -1,12 +1,11 @@
 package Project.Frame.Components.TextField;
 
-import Project.Frame.Components.Buttons.AddButton;
-
 import static Project.utils.Sizes.*;
 
-public class TextField extends AbstractTextField{
+public class TextField extends AbstractTextField {
     private static int number;
-    public TextField(){
+
+    public TextField() {
     }
 
     @Override

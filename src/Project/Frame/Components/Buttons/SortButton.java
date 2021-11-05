@@ -3,15 +3,13 @@ package Project.Frame.Components.Buttons;
 import Project.Frame.Components.TableModel;
 import Project.model.Magician;
 
-import javax.swing.*;
-
 //Кнопка сортировки после жеребьевки
 
-public class SortButton extends JButton {
+public class SortButton extends AbstractChangeButton {
     TableModel table;
 
-    public SortButton(String text, TableModel table) {
-        super(text);
+    public SortButton(TableModel table) {
+        super("Сортировать");
         this.table = table;
         addActionListener();
     }

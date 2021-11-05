@@ -9,12 +9,12 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.List;
 
-public class SaveButton extends JButton {
+public class SaveButton extends AbstractChangeButton {
     private final TableModel table;
     private static Nomination nomination = Nomination.STAGE;
 
-    public SaveButton(String text, TableModel table) {
-        super(text);
+    public SaveButton(TableModel table) {
+        super("Сохранить");
         this.table = table;
         addActionListener();
     }

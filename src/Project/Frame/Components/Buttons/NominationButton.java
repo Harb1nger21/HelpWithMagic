@@ -37,7 +37,8 @@ public class NominationButton extends AbstractButton {
             table.fireTableDataChanged();
         });
     }
-    private void setVariables(){
+
+    private void setVariables() {
         table = GeneralFrame.getTableOfMagicians();
         table.setListOfMagicians(magicians);
         label = GeneralFrame.getMagicCategory();

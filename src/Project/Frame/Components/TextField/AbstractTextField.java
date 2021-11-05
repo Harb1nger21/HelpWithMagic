@@ -6,7 +6,7 @@ import static Project.utils.Sizes.BUTTON_WIDTH;
 import static Project.utils.Sizes.BUTTON_HEIGHT;
 
 public abstract class AbstractTextField extends JTextField {
-    public AbstractTextField(){
+    public AbstractTextField() {
         setBounds(getPointX(), getPointY(), BUTTON_WIDTH, BUTTON_HEIGHT);
     }
 

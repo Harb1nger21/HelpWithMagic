@@ -5,6 +5,8 @@ import Project.model.Magician;
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
+import static Project.Frame.Components.lables.LabelsType.*;
+
 //Модель таблицы участников
 
 public class TableModel extends AbstractTableModel {
@@ -39,25 +41,27 @@ public class TableModel extends AbstractTableModel {
 
     @Override
     public void setValueAt(Object value, int rowIndex, int columnIndex) {
+        final Magician magician = listOfMagicians.get(rowIndex);
         switch (columnIndex) {
-            case 0 -> listOfMagicians.get(rowIndex).setFirstName((String) value);
-            case 1 -> listOfMagicians.get(rowIndex).setSecondName((String) value);
-            case 2 -> listOfMagicians.get(rowIndex).setCountry((String) value);
-            case 3 -> listOfMagicians.get(rowIndex).setCity((String) value);
-            case 4 -> listOfMagicians.get(rowIndex).setPhoneNumber((String) value);
-            case 5 -> listOfMagicians.get(rowIndex).setLotNumber((String) value);
+            case 0 -> magician.setFirstName((String) value);
+            case 1 -> magician.setSecondName((String) value);
+            case 2 -> magician.setCountry((String) value);
+            case 3 -> magician.setCity((String) value);
+            case 4 -> magician.setPhoneNumber((String) value);
+            case 5 -> magician.setLotNumber((String) value);
         }
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
+        final Magician magician = listOfMagicians.get(rowIndex);
         return switch (columnIndex) {
-            case 0 -> listOfMagicians.get(rowIndex).getFirstName();
-            case 1 -> listOfMagicians.get(rowIndex).getSecondName();
-            case 2 -> listOfMagicians.get(rowIndex).getCountry();
-            case 3 -> listOfMagicians.get(rowIndex).getCity();
-            case 4 -> listOfMagicians.get(rowIndex).getPhoneNumber();
-            case 5 -> listOfMagicians.get(rowIndex).getLotNumber();
+            case 0 -> magician.getFirstName();
+            case 1 -> magician.getSecondName();
+            case 2 -> magician.getCountry();
+            case 3 -> magician.getCity();
+            case 4 -> magician.getPhoneNumber();
+            case 5 -> magician.getLotNumber();
             default -> "";
         };
     }
@@ -65,12 +69,12 @@ public class TableModel extends AbstractTableModel {
     @Override
     public String getColumnName(int c) {
         return switch (c) {
-            case 0 -> "Имя";
-            case 1 -> "Фамилия";
-            case 2 -> "Страна";
-            case 3 -> "Город";
-            case 4 -> "Номер телефона";
-            case 5 -> "Жеребьевка";
+            case 0 -> NAME.getTitle();
+            case 1 -> SECOND_NAME.getTitle();
+            case 2 -> COUNTRY.getTitle();
+            case 3 -> CITY.getTitle();
+            case 4 -> PHONE.getTitle();
+            case 5 -> LOT_NUMBER.getTitle();
             default -> "";
         };
     }
