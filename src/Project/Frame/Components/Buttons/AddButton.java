@@ -1,6 +1,6 @@
 package Project.Frame.Components.Buttons;
 
-import Project.Frame.Components.TableModel;
+import Project.Frame.Components.Table.TableModel;
 import Project.Frame.Components.TextField.TextField;
 import Project.Frame.GeneralFrame;
 import Project.model.Magician;

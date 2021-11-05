@@ -1,4 +1,4 @@
-package Project.Frame.Components;
+package Project.Frame.Components.Table;
 
 
 import javax.swing.*;

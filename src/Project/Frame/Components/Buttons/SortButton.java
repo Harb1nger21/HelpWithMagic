@@ -1,6 +1,6 @@
 package Project.Frame.Components.Buttons;
 
-import Project.Frame.Components.TableModel;
+import Project.Frame.Components.Table.TableModel;
 import Project.model.Magician;
 
 //Кнопка сортировки после жеребьевки

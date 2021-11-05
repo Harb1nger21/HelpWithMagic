@@ -1,11 +1,11 @@
-package Project.Frame.Components;
+package Project.Frame.Components.Table;
 
 import Project.model.Magician;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
-import static Project.Frame.Components.lables.LabelsType.*;
+import static Project.Frame.Components.Lables.LabelsType.*;
 
 //Модель таблицы участников
 

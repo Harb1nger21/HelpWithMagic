@@ -1,4 +1,4 @@
-package Project.Frame.Components.lables;
+package Project.Frame.Components.Lables;
 
 public enum LabelsType {
     NAME("Имя"),

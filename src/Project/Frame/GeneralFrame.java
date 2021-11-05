@@ -1,12 +1,12 @@
 package Project.Frame;
 
-import Project.Frame.Components.*;
 import Project.Frame.Components.Buttons.*;
-import Project.Frame.Components.ScrollPane;
-import Project.Frame.Components.lables.Category;
-import Project.Frame.Components.lables.Headmen;
-import Project.Frame.Components.lables.LabelsType;
-import Project.Frame.Components.lables.MagLabel;
+import Project.Frame.Components.Table.ScrollPane;
+import Project.Frame.Components.Lables.Category;
+import Project.Frame.Components.Lables.Headmen;
+import Project.Frame.Components.Lables.LabelsType;
+import Project.Frame.Components.Lables.MagLabel;
+import Project.Frame.Components.Buttons.Nomination;
 
 import javax.swing.*;
 

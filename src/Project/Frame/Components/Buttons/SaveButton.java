@@ -1,10 +1,8 @@
 package Project.Frame.Components.Buttons;
 
-import Project.Frame.Components.TableModel;
+import Project.Frame.Components.Table.TableModel;
 import Project.model.Magician;
-import Project.Frame.Components.Nomination;
 
-import javax.swing.*;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.List;

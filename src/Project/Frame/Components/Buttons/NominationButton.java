@@ -1,8 +1,7 @@
 package Project.Frame.Components.Buttons;
 
-import Project.Frame.Components.Nomination;
-import Project.Frame.Components.TableModel;
-import Project.Frame.Components.lables.Category;
+import Project.Frame.Components.Table.TableModel;
+import Project.Frame.Components.Lables.Category;
 import Project.model.Magician;
 
 import javax.swing.*;

@@ -1,7 +1,7 @@
 package Project.Frame.Components.Buttons;
 
-import Project.Frame.Components.MagicMouseListener;
-import Project.Frame.Components.TableModel;
+import Project.Frame.Components.Table.MagicMouseListener;
+import Project.Frame.Components.Table.TableModel;
 
 //Удаляет выбранного мышью участника из таблицы
 
